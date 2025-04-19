@@ -4,12 +4,6 @@
 // this program runs each core of your pcs processor cores 
 // and and says "Hello World" from each of them
 int main(int argv, char** argc) {
-        int a = 2;
-        int b = 2;
-        a = a + b;
-        
-        printf("a: %d", a);
-
         MPI_Init(NULL, NULL);      // initialize MPI environment
         int world_size; // number of processes
         MPI_Comm_size(MPI_COMM_WORLD, &world_size);
@@ -21,10 +15,7 @@ int main(int argv, char** argc) {
         int name_len;
         MPI_Get_processor_name(processor_name, &name_len);
 
-        printf("Hello world from processor %s, rank %d out of %d processors\n",
-                processor_name, world_rank, world_size);
-
-        printf("Second Process from %d \n", world_rank);        
+        printf("Hello world from processor %s, rank %d out of %d processors\n", processor_name, world_rank, world_size);
 
         MPI_Finalize(); // finish MPI environment
 }

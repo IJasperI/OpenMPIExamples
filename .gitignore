@@ -1,7 +1,8 @@
 ## ignore all
 *
 
-## unignore c files and shell scripts
+## unignore c files, markdown files and shell scripts
 !*.c
 !*.sh
+!*.md
 

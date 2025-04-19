@@ -1,0 +1,7 @@
+## ignore all
+*
+
+## unignore c files and shell scripts
+!*.c
+!*.sh
+

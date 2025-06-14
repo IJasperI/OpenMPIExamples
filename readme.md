@@ -6,3 +6,4 @@ If u want to run files by yourself, use the <b>mpicc</b> command instead of gcc<
 ## What does what
 test_mpi is a simple showcase answering with a "hello world" from each processor core. <br>
 mpi_comm_test is a simple showcase, in which core 1 and core 0 send a letter towards oneanother. <br>
+mpi_cluster_messages is a simple showcase, in which all hosts in a cluster send messages and print them in console.<br>

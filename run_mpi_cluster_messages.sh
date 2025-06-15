@@ -16,4 +16,4 @@ module load openmpi/gcc
 # compile the C file
 mpicc mpi_cluster_messages.c -o mpiClusterMessages
 # run compiled test_mpi.c file
-mpirun -hostfile ../mpi_hostfile1.txt ./mpiClusterMessages
+mpirun -hostfile mpi_hostfile1.txt ./mpiClusterMessages

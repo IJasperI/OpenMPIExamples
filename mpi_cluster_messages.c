@@ -17,27 +17,31 @@ main(int argc, char **argv){
     MPI_Comm_rank(MPI_COMM_WORLD,&rank);
     gethostname(machine_name, 255);
 
+
+
+
+
     if (rank==0){
         printf("M with MPI_Send/MPI_Recv \n");
     }
     for (i=0;i<size;i++){
-        sprintf(message,"Hello world from rank %d running on %s",rank,machine_name);
+        sprintf(message,"Hello world from process %d running on %s",rank,machine_name);
         MPI_Send(message, 256,MPI_CHAR,0,tag,MPI_COMM_WORLD);
         MPI_Recv(message,256,MPI_CHAR,i,tag,MPI_COMM_WORLD,&status);
-        printf("Message from process = %d : %s\n",i,message);
+        printf("Message %d : %s\n",i,message);
     }
 
-
-    printf("M without MPI_Send/MPI_Recv \n");
+    /*
+    printf("M without MPI functions\n");
     for (i=0;i<size;i++){
         sprintf(message,"Hello world from rank %d running on %s",rank,machine_name);
-        //MPI_Send(message, 256,MPI_CHAR,0,tag,MPI_COMM_WORLD);
-        //MPI_Recv(message,256,MPI_CHAR,i,tag,MPI_COMM_WORLD,&status);
         printf("Message from process = %d : %s\n",i,message);
     }
-
+    */
 
     MPI_Finalize();
+    
+
     return 0;
 
 }
